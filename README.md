@@ -31,7 +31,7 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented required features:
 
 <img src='https://submissions.us-east-1.linodeobjects.com/web102/3W8gK7LT.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
+https://submissions.us-east-1.linodeobjects.com/web102/3W8gK7LT.gif
 GIF created with ...  
 [Kap](https://getkap.co/) for macOS
 
