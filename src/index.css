@@ -55,17 +55,18 @@
     transform: rotateY(180deg);
 }
 
-button {
+.navButtons {
     display: inline-block;
     width: 150px;
     height: 40px;
     margin: 0 10px;
-    background-color: dodgerblue;
-    color: white;
     text-decoration: none;
     text-align: center;
     line-height: 40px;
     border: none;
-    cursor: pointer;
     transition: background-color 0.3s;
+}
+
+button {
+    cursor: pointer;
 }
