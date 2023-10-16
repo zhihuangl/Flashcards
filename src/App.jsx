@@ -22,14 +22,20 @@ function App() {
   const [inputText, setInputText] = useState(''); 
   const [numCorrect, setNumCorrect] = useState(0); 
   const [currentStreak, setCurrentStreak] = useState(0); 
-
+  const [guessCorrect, setCorrectGuess] = useState(''); 
+  const [longestStreak, setLongestStreak] = useState(0); 
   const checkAnswer = () => {
     const ans = inputText.toLowerCase();
     if (ans === flashcards[currentIndex].answer.toLowerCase()) {
       setNumCorrect(numCorrect + 1);
       setCurrentStreak(currentStreak + 1);
+      setCorrectGuess('correct'); 
     } else {
+      setCorrectGuess('incorrect'); 
       setCurrentStreak(0);
+      if (currentStreak > longestStreak) {
+        setLongestStreak(currentStreak); 
+      }
     }
   };
   
@@ -47,7 +53,7 @@ function App() {
         <h1>Riddles</h1>
         <h3>Total riddles: {initialFlashcards.length}</h3>
         <h3>Total Correct: {numCorrect}</h3>
-        <h3>Current Streak: {currentStreak}</h3>
+        <h3>Current Streak: {currentStreak} &nbsp; Longest Streak: {longestStreak}</h3>
       </div>
       <div className='card'>
         <Flashcard question={flashcards[currentIndex].question}
@@ -63,6 +69,7 @@ function App() {
           className="textbox"
         />
         <button onClick={checkAnswer}>Check Answer</button>
+        <p>Your answer is {guessCorrect}</p>
       </div>
       <div className="buttons">
         <button className="navButtons" onClick={showPreviousFlashcard}>Previous</button>
